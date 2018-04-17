@@ -1,0 +1,6 @@
+[submodule "vendor/optimisme-examples"]
+	path = vendor/optimisme-examples
+	url = https://github.com/optimisme/gjs-examples.git
+[submodule "vendor/programmica-examples"]
+	path = vendor/programmica-examples
+	url = https://github.com/Programmica/gjs-gtk-examples.git
