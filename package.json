@@ -4,7 +4,7 @@
     "test": "yarn test:codemod && yarn test:integration",
     "test:codemod": "jest transforms",
     "test:integration": "jest scripts/test.js",
-    "transform": "node scripts/transform",
+    "generate": "node scripts/transform && node scripts/readme",
     "lint": "eslint 'scripts/**/*.js' 'transforms/**/*.js'"
   },
   "dependencies": {
