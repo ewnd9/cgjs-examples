@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t cgjs-examples .
+script:
+  - docker run -it --rm -v $PWD:/app cgjs-examples /bin/bash -c "gjs --version && yarn install && yarn test"

@@ -18,6 +18,7 @@ function runEachFile(dir) {
       const filePathRelative = filePath.replace(rootPath, '');
 
       test(`test ${filePathRelative}`, done => {
+        console.log(filePathRelative);
         const proc = execa(cgjsBinary, [filePath], error => {
           if (error && !error.killed && error.signal !== 'SIGINT') {
             done(error);
