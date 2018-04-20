@@ -14,6 +14,8 @@ runEachFile(`${rootPath}/examples/optimisme-examples`);
 runEachFile(`${rootPath}/examples/programmica-examples`);
 runEachFile(`${rootPath}/examples/next`);
 
+process.exit(0);
+
 function runEachFile(dir) {
   fs.readdirSync(dir)
     .filter(name => name.endsWith('.js'))
