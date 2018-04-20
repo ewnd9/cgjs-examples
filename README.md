@@ -135,7 +135,7 @@ $ yarn test
 
 ```sh
 $ docker build -t cgjs-examples .
-$ docker run -it --rm -v $PWD:/app cgjs-examples /bin/bash
+$ docker run -it --rm -v $PWD:/app cgjs-examples /bin/bash -c "gjs --version && yarn install && yarn test"
 ```
 
 ## License

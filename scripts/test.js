@@ -7,8 +7,12 @@ const execa = require('execa');
 const rootPath = path.resolve(`${__dirname}/..`);
 const cgjsBinary = path.resolve(`${rootPath}/node_modules/.bin/cgjs`);
 
+const xvfbDisplayNumber = ':40';
+const xvfb = execa('Xvfb', [xvfbDisplayNumber, '-ac']);
+
 runEachFile(`${rootPath}/examples/optimisme-examples`);
 runEachFile(`${rootPath}/examples/programmica-examples`);
+runEachFile(`${rootPath}/examples/next`);
 
 function runEachFile(dir) {
   fs.readdirSync(dir)
@@ -19,13 +23,22 @@ function runEachFile(dir) {
 
       test(`test ${filePathRelative}`, done => {
         console.log(filePathRelative);
-        const proc = execa(cgjsBinary, [filePath], error => {
-          if (error && !error.killed && error.signal !== 'SIGINT') {
-            done(error);
-          } else {
-            done();
-          }
-        });
+
+        const env = {
+          ...process.env,
+          DISPLAY: xvfbDisplayNumber
+        };
+
+        const proc = execa(cgjsBinary, [filePath], { cwd: rootPath, env });
+
+        proc
+          .catch(err => {
+            if (err && !err.killed && err.signal !== 'SIGINT') {
+              done(err);
+            } else {
+              done();
+            }
+          });
 
         setTimeout(() => {
           proc.kill('SIGINT');
