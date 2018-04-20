@@ -10,11 +10,13 @@ const cgjsBinary = path.resolve(`${rootPath}/node_modules/.bin/cgjs`);
 const xvfbDisplayNumber = ':40';
 const xvfb = execa('Xvfb', [xvfbDisplayNumber, '-ac']);
 
+afterAll(() => {
+  xvfb.kill('SIGINT');
+});
+
 runEachFile(`${rootPath}/examples/optimisme-examples`);
 runEachFile(`${rootPath}/examples/programmica-examples`);
 runEachFile(`${rootPath}/examples/next`);
-
-process.exit(0);
 
 function runEachFile(dir) {
   fs.readdirSync(dir)
