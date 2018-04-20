@@ -7,7 +7,10 @@ module.exports = {
     jest: true
   },
   globals: {
-    Promise: true
+    Promise: true,
+    imports: true,
+    print: true,
+    log: true
   },
   rules: {
     'arrow-parens': [

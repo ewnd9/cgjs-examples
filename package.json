@@ -5,7 +5,7 @@
     "test:codemod": "jest transforms",
     "test:integration": "jest scripts/test.js",
     "generate": "node scripts/transform && node scripts/readme",
-    "lint": "eslint 'scripts/**/*.js' 'transforms/**/*.js'"
+    "lint": "eslint 'scripts/**/*.js' 'transforms/**/*.js' 'examples/next/**/*.js'"
   },
   "dependencies": {
     "cgjs": "^0.1.27",
