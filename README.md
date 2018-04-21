@@ -2,27 +2,158 @@
 
 [![Build Status](https://travis-ci.org/ewnd9/cgjs-examples.svg?branch=master)](https://travis-ci.org/ewnd9/cgjs-examples)
 
-- [`optimisme-examples`](examples/optimisme-examples)
+- [`optimisme-examples`](examples/optimisme-examples), forked from [optimisme/gjs-examples](https://github.com/optimisme/gjs-examples)
   - [`egAsset.js`](examples/optimisme-examples/egAsset.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egAsset.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egAsset0.png)
+    </details>
+
   - [`egBorderless.js`](examples/optimisme-examples/egBorderless.js)
   - [`egCairo.js`](examples/optimisme-examples/egCairo.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egCairo.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egCairo0.png)
+    </details>
+
   - [`egClutter.js`](examples/optimisme-examples/egClutter.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egClutter.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egClutter0.png)
+    </details>
+
   - [`egCss.js`](examples/optimisme-examples/egCss.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egCss.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egCss0.png)
+    </details>
+
   - [`egDialog.js`](examples/optimisme-examples/egDialog.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egDialog.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egDialog0.png)
+    ![egDialog.js1](https://raw.github.com/optimisme/gjs-examples/master/captures/egDialog1.png)
+    ![egDialog.js2](https://raw.github.com/optimisme/gjs-examples/master/captures/egDialog2.png)
+    </details>
+
   - [`egEvent.js`](examples/optimisme-examples/egEvent.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egEvent.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egEvent0.png)
+    </details>
+
   - [`egHeader.js`](examples/optimisme-examples/egHeader.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egHeader.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egHeader0.png)
+    </details>
+
   - [`egIcon.js`](examples/optimisme-examples/egIcon.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egIcon.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egIcon0.png)
+    ![egIcon.js1](https://raw.github.com/optimisme/gjs-examples/master/captures/egIcon1.png)
+    </details>
+
   - [`egInfo.js`](examples/optimisme-examples/egInfo.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egInfo.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egInfo0.png)
+    </details>
+
   - [`egJSON.js`](examples/optimisme-examples/egJSON.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egJSON.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egJSON0.png)
+    </details>
+
   - [`egJustify.js`](examples/optimisme-examples/egJustify.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egJustify.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egJustify0.png)
+    </details>
+
   - [`egList.js`](examples/optimisme-examples/egList.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egList.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egList0.png)
+    </details>
+
   - [`egOpen.js`](examples/optimisme-examples/egOpen.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egOpen.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egOpen0.png)
+    ![egOpen.js1](https://raw.github.com/optimisme/gjs-examples/master/captures/egOpen1.png)
+    </details>
+
   - [`egSearch.js`](examples/optimisme-examples/egSearch.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egSearch.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egSearch0.png)
+    </details>
+
   - [`egSelect.js`](examples/optimisme-examples/egSelect.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egSelect.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egSelect0.png)
+    ![egSelect.js1](https://raw.github.com/optimisme/gjs-examples/master/captures/egSelect1.png)
+    </details>
+
   - [`egSpawn.js`](examples/optimisme-examples/egSpawn.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egSpawn.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egSpawn0.png)
+    </details>
+
   - [`egTimers.js`](examples/optimisme-examples/egTimers.js)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egTimers.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egTimers0.png)
+    </details>
+
   - [`egWebmsg.js`](examples/optimisme-examples/egWebmsg.js)
-- [`programmica-examples`](examples/programmica-examples)
+
+    <details>
+      <summary>Screenshot</summary>
+
+      ![egWebmsg.js0](https://raw.github.com/optimisme/gjs-examples/master/captures/egWebmsg0.png)
+    </details>
+
+- [`programmica-examples`](examples/programmica-examples), forked from [Programmica/gjs-gtk-examples](https://github.com/Programmica/gjs-gtk-examples)
   - [`aboutdialog.js`](examples/programmica-examples/aboutdialog.js)
   - [`accellabel.js`](examples/programmica-examples/accellabel.js)
   - [`actionbar.js`](examples/programmica-examples/actionbar.js)

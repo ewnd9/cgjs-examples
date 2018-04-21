@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "cgjs": "^0.1.27",
+    "dedent": "^0.7.0",
     "execa": "^0.10.0",
     "jscodeshift": "^0.5.0",
     "lebab": "^2.7.7",
