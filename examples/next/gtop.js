@@ -14,7 +14,7 @@ const list = GTop
   .map(pid => {
     GTop.glibtop_get_proc_mem(processMemory, pid);
     GTop.glibtop_get_proc_uid(processUid, pid);
-    const args = GTop.glibtop_get_proc_args(processArgs, pid, 0);
+    const args = GTop.glibtop_get_proc_args(processArgs, pid, 0) || '';
 
     return {
       pid,
