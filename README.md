@@ -132,8 +132,9 @@ $ yarn test
 ### Docker testing
 
 ```sh
-$ docker build -t cgjs-examples .
-$ docker run -it --rm -v $PWD:/app cgjs-examples /bin/bash -c "gjs --version && yarn install && yarn test"
+$ node scripts/build-docker.js
+$ docker run -it --rm -v $PWD:/app cgjs-examples-ubuntu:17.10 /bin/bash -c "gjs --version && yarn install && yarn test"
+$ docker run -it --rm -v $PWD:/app cgjs-examples-debian:sid /bin/bash -c "gjs --version && yarn install && yarn test"
 ```
 
 ## License
