@@ -11,12 +11,24 @@ main()
   });
 
 async function main() {
-  await execa('docker', ['build', '-t', 'cgjs-examples-ubuntu:17.10', '.'], {
-    cwd: `${rootPath}/scripts/docker/ubuntu-17-10`,
-    stdio: 'inherit'
-  });
-  await execa('docker', ['build', '-t', 'cgjs-examples-debian:sid', '.'], {
-    cwd: `${rootPath}/scripts/docker/debian-sid`,
-    stdio: 'inherit'
-  });
+  const publish = process.argv[2] === '--publish';
+
+  const images = [{
+    name: 'ewnd9/gjs-examples:ubuntu-17.10',
+    dir: `${rootPath}/scripts/docker/ubuntu-17-10`
+  }, {
+    name: 'ewnd9/gjs-examples:debian-sid',
+    dir: `${rootPath}/scripts/docker/debian-sid`
+  }];
+
+  for (const { name, dir } of images) {
+    await execa('docker', ['build', '-t', name, '.'], {
+      cwd: dir,
+      stdio: 'inherit'
+    });
+
+    if (publish) {
+      await execa('docker', ['push', name], { stdio: 'inherit' });
+    }
+  }
 }
