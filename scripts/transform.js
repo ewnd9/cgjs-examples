@@ -38,7 +38,15 @@ async function main() {
       execa.sync('mkdir', ['-p', destDir]);
       execa.sync('cp', ['-R', `${srcDir}/_resources`, `${destDir}/_resources`]);
 
-      transformDirectory({ srcDir, destDir, license });
+      transformDirectory({
+        srcDir,
+        destDir,
+        license,
+        ignored: [
+          'toolpalette.js', // TypeError: Gtk.ToolPavarte is not a constructor
+          'entrycompletion.js' // TypeError: Gtk.EntryCompvarion is not a constructor
+        ]
+      });
     }
   ];
 
@@ -47,9 +55,9 @@ async function main() {
   }
 }
 
-function transformDirectory({ srcDir, destDir, license }) {
+function transformDirectory({ srcDir, destDir, license, ignored = [] }) {
   fs.readdirSync(srcDir)
-    .filter(name => name.endsWith('.js'))
+    .filter(name => name.endsWith('.js') && !ignored.includes(name))
     .forEach(name => {
       transform({
         srcPath: `${srcDir}/${name}`,
