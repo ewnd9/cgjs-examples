@@ -10,39 +10,39 @@ const GObject = imports.gi.GObject;
 Gtk.init(null);
 
 function on_item_activated(iconview) {
-  const model = iconview.get_model();
+  var model = iconview.get_model();
 
-  for (let i = 0; i < iconview.get_selected_items().length; i++) {
+  for (var i = 0; i < iconview.get_selected_items().length; i++) {
     var treeiter = {};
-    let success;
-    const treeiter = model.get_iter(iconview.get_selected_items()[i], treeiter);
-    const value = model.get_value(treeiter[1], 0);
+    var success,
+      treeiter = model.get_iter(iconview.get_selected_items()[i], treeiter);
+    var value = model.get_value(treeiter[1], 0);
 
     print(`Selected item: ${value}`);
   }
 }
 
-const window = new Gtk.Window();
+var window = new Gtk.Window();
 window.set_title('IconView');
 window.connect('destroy', Gtk.main_quit);
 
-const liststore = new Gtk.ListStore();
+var liststore = new Gtk.ListStore();
 liststore.set_column_types([
   GObject.TYPE_STRING,
   GdkPixbuf.Pixbuf,
   GObject.TYPE_STRING
 ]);
 
-const image = new Gtk.Image();
+var image = new Gtk.Image();
 
-const distributions = ['debian', 'fedora', 'mandriva', 'gentoo', 'mepis'];
+var distributions = ['debian', 'fedora', 'mandriva', 'gentoo', 'mepis'];
 
-for (let i = 0; i < distributions.length; i++) {
+for (var i = 0; i < distributions.length; i++) {
   image.set_from_file(`_resources/${distributions[i]}.ico`);
 
-  const name =
+  var name =
     distributions[i].charAt(0).toUpperCase() + distributions[i].slice(1);
-  const tooltip = `${name} tooltip example`;
+  var tooltip = `${name} tooltip example`;
 
   liststore.set(
     liststore.append(),
@@ -51,7 +51,7 @@ for (let i = 0; i < distributions.length; i++) {
   );
 }
 
-const iconview = new Gtk.IconView();
+var iconview = new Gtk.IconView();
 iconview.set_model(liststore);
 iconview.set_text_column(0);
 iconview.set_pixbuf_column(1);

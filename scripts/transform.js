@@ -45,7 +45,10 @@ async function main() {
         ignored: [
           'toolpalette.js', // TypeError: Gtk.ToolPavarte is not a constructor
           'entrycompletion.js' // TypeError: Gtk.EntryCompvarion is not a constructor
-        ]
+        ],
+        lebabIgnored: {
+          let: ['iconview.js', 'treestore.js']
+        }
       });
     }
   ];
@@ -55,7 +58,7 @@ async function main() {
   }
 }
 
-function transformDirectory({ srcDir, destDir, license, ignored = [] }) {
+function transformDirectory({ srcDir, destDir, license, ignored = [], lebabIgnored = {} }) {
   fs.readdirSync(srcDir)
     .filter(name => name.endsWith('.js') && !ignored.includes(name))
     .forEach(name => {
@@ -72,7 +75,7 @@ function transformDirectory({ srcDir, destDir, license, ignored = [] }) {
           'let',
           'template',
           'class'
-        ]
+        ].filter(lebabName => !lebabIgnored[lebabName] || !lebabIgnored[lebabName].includes(name))
       });
     });
 }
