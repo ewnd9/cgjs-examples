@@ -14,9 +14,9 @@ Run it with:
     gjs egCairo.js
 */
 const Cairo = imports.cairo;
-const Clutter = require('Clutter');
+const Clutter = imports.gi.Clutter;
 const Gdk = require('Gdk');
-const GtkClutter = require('GtkClutter');
+const GtkClutter = imports.gi.GtkClutter;
 const Gio = require('Gio');
 const GLib = require('GLib');
 const Gtk = require('Gtk');

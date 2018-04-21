@@ -23,7 +23,13 @@ function transform(file, api) {
         const leftSide = decl.id.name;
         const rightSide = init.property.name;
 
-        if (leftSide !== rightSide) {
+        // @TODO: see https://github.com/cgjs/cgjs/issues/23
+        const exceptions = [
+          'Clutter',
+          'GtkClutter'
+        ];
+
+        if (leftSide !== rightSide || exceptions.includes(rightSide)) {
           return;
         }
 

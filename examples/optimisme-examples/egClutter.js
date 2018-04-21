@@ -4,8 +4,8 @@
 // (license unspecified)
 
 const Gdk = require('Gdk');
-const Clutter = require('Clutter');
-const GtkClutter = require('GtkClutter');
+const Clutter = imports.gi.Clutter;
+const GtkClutter = imports.gi.GtkClutter;
 const Gio = require('Gio');
 const GLib = require('GLib');
 const Gtk = require('Gtk');
