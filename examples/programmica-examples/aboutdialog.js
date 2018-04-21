@@ -8,7 +8,11 @@ const GdkPixbuf = require('GdkPixbuf');
 
 Gtk.init(null);
 
-const logo = GdkPixbuf.Pixbuf.new_from_file_at_size('gtk.png', 64, 64);
+const logo = GdkPixbuf.Pixbuf.new_from_file_at_size(
+  `${__dirname}/_resources/gtk.png`,
+  64,
+  64
+);
 
 const aboutdialog = new Gtk.AboutDialog();
 aboutdialog.set_title('Dialog');

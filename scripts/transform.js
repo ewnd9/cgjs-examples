@@ -65,6 +65,7 @@ function transformDirectory({ srcDir, destDir, license, ignored = [] }) {
         license,
         transforms: [
           `${rootPath}/transforms/gtk-optimisme-examples.js`,
+          `${rootPath}/transforms/gtk-programmica-examples.js`,
           `${rootPath}/transforms/gtk-gjs-imports.js`
         ],
         lebabTransforms: [
