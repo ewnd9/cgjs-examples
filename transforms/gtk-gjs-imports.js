@@ -26,7 +26,9 @@ function transform(file, api) {
         // @TODO: see https://github.com/cgjs/cgjs/issues/23
         const exceptions = [
           'Clutter',
-          'GtkClutter'
+          'GtkClutter',
+          // camel patching is missing `GObject.TYPE_STRING` (see vendor/programmica-examples/treestore.js)
+          'GObject'
         ];
 
         if (leftSide !== rightSide || exceptions.includes(rightSide)) {

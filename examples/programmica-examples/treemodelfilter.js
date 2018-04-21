@@ -4,7 +4,7 @@
 // (license CC0-1.0)
 
 const Gtk = require('Gtk');
-const GObject = require('GObject');
+const GObject = imports.gi.GObject;
 
 Gtk.init(null);
 

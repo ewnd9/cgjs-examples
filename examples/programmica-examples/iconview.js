@@ -5,7 +5,7 @@
 
 const Gtk = require('Gtk');
 const GdkPixbuf = require('GdkPixbuf');
-const GObject = require('GObject');
+const GObject = imports.gi.GObject;
 
 Gtk.init(null);
 
