@@ -11,7 +11,7 @@ const installLineIndex = lines.findIndex(line => line === '## Install');
 const listing = getListing();
 
 const result = [
-  ...lines.slice(0, 4),
+  ...lines.slice(0, lines.findIndex(line => line.startsWith(`- [\`optimisme-examples\``))),
   ...listing.split('\n'),
   ...lines.slice(installLineIndex)
 ].join('\n');

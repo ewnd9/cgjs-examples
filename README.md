@@ -2,6 +2,16 @@
 
 [![Build Status](https://travis-ci.org/ewnd9/cgjs-examples.svg?branch=master)](https://travis-ci.org/ewnd9/cgjs-examples)
 
+Intermediate step to ensure correctness of Node.js GTK bindings.
+
+[`gjs`](https://gitlab.gnome.org/GNOME/gjs) has been around for years and powers Gnome, one of the largest Linux desktop environments.
+
+[`cgjs`](https://github.com/cgjs/cgjs) is an effort to bring CommonJS and Node.js shims to `gjs`.
+
+[`node-gir`](https://github.com/Place1/node-gir) is an unfinished Node.js bindings library, started in 2011 with many different attempts.
+
+## List of Examples
+
 - [`optimisme-examples`](examples/optimisme-examples), forked from [optimisme/gjs-examples](https://github.com/optimisme/gjs-examples)
 
   <details><summary>Listing</summary>
