@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const dedent = require('dedent');
 const rootPath = path.resolve(`${__dirname}/..`);
 
 const readme = fs.readFileSync(`${rootPath}/README.md`, 'utf-8');
@@ -24,38 +23,32 @@ function runEachFile(dir, { repo, files = {} }) {
 
   const repoLink = `[${repo.split('/').slice(3).join('/')}](${repo})`;
   str += `- [\`${path.basename(dir)}\`](${dir}), forked from ${repoLink}\n`;
-  str += fs.readdirSync(`${rootPath}/${dir}`)
+  str += '\n' + prepend('<details><summary>Listing</summary>', 2) + '\n\n';
+  str += prepend(getFilesList(dir, { files }), 2);
+  str += prepend('</details>\n\n', 2);
+
+  return str;
+}
+
+function getFilesList(dir, { files }) {
+  return fs.readdirSync(`${rootPath}/${dir}`)
     .reduce((acc, name) => {
       if (!name.endsWith('.js')) {
         return acc;
       }
 
-      const ret = [];
-
-      ret.push(`  - [\`${name}\`](${dir}/${name})\n`);
+      let str = prepend(`- [\`${name}\`](${dir}/${name})\n`, 2);
 
       if (files[name] && files[name].images) {
-        const images = files[name].images.map((image, index) =>
-          `![${name}${index}](${image})`
-        ).join('\n');
-
-        const details = dedent`
-          <details>
-            <summary>Screenshot</summary>
-
-            ${images}
-          </details>
-        `;
-
-        ret.push('\n');
-        ret.push(details.split('\n').map(line => line ? `${' '.repeat(4)}${line}` : '').join('\n'));
-        ret.push('\n\n');
+        str += prepend(`\n<details><summary>Screenshot</summary>\n\n`, 4);
+        files[name].images.forEach((image, index) => {
+          str += prepend(`![${name}${index}](${image})\n`, 6);
+        });
+        str += prepend('\n</details>\n\n', 4);
       }
 
-      return acc + ret.join('');
+      return acc + str;
     }, '');
-
-  return str;
 }
 
 function getListing() {
@@ -139,4 +132,8 @@ function getListing() {
   });
 
   return listing;
+}
+
+function prepend(str, count) {
+  return str.split('\n').map(line => line ? `${' '.repeat(count)}${line}` : '').join('\n');
 }
