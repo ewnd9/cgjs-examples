@@ -18,8 +18,6 @@ server.add_handler('/', (server, msg/*, path, query, client*/) => {
   msg.response_body.append(JSON.stringify({ test: 1 }));
   msg.response_body.complete();
   msg.set_status(200);
-
-  server.unpause_message(msg);
 });
 
 const port = 8000;
